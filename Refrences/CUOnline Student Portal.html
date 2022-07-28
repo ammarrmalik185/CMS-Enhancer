@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>CUOnline Student Portal</title>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Content/img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/Content/img/fav.png">
+
+    <link href="/Content/css/bootstrap.css" rel="stylesheet"/>
+<link href="/Content/css/style.css" rel="stylesheet"/>
+<link href="/Content/css/style_cuonline_portal.css" rel="stylesheet"/>
+ 
+
+    <script src="/Content/js/jquery-1.10.2.js"></script>
+<script src="/Content/js/bootstrap.js"></script>
+
+    
+    <script src="/Content/js/html5shiv.js"></script>
+<script src="/Content/js/less-1.3.3.js"></script>
+<script src="/Content/js/MenuActivation.js"></script>
+ 
+
+</head>
+<style>
+    .main_body .content_area {
+        padding: 0 0 10px 0;
+        margin: 10px 0;
+    }
+
+        .main_body .content_area .title_search_area {
+            border-radius: 0;
+        }
+
+    .question_box h3 {
+        margin: 50px 0;
+        text-align: center;
+        font-size: 30px;
+    }
+
+
+</style>
+
+
+<body>
+    <script>
+
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+
+    <div class="container">
+<header>
+    <div class="row clearfix top_row">
+        <div class="inner_row">
+            <div class="col-md-12 column">
+                    <span title="AMMAR RASHID MALIK S/D/O MALIK ABDUL RASHID" class="label label-default label_without_bg"><b>Welcome : CIIT/FA18-BSE-011/ISB</b></span>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix logo_menu_row">
+        <div class="inner_row">
+            <div class="col-md-4 column logo">
+                <div>
+                    <img alt="100x100" src="/Content/img/logo_with_text.png">
+                </div>
+            </div>
+
+
+            <div class="col-md-6 column rounded_menu_boxes">
+                <ul class="pull-right">
+                    <li><a title="Home" style="" class="home" id="Dash_Board" href="/Courses/Index">Dashboard</a><span></span></li>
+                    <li><a title="Course Registration Card" style="" class="regCard" id="Registration_Card" href="/RegistrationCard/Index">Registration Card</a><span></span></li>
+                        <li><a title="Course Registration" id="Course_Registration" style="" class="courses" href="/CourseRegistration/Index">Course Registration</a></li>
+                                        <li><a title="Student Fees" class="fees" id="Fees" href="/Fees/Index">Fees</a><span></span></li>
+                    <li><a title="Result Card" class="marks" id="Result_Card" href="/ResultCard/Index">Result Card</a><span></span></li>
+                    <li><a title="My Profile" style="" class="attndnce" id="My_Profile" href="/Profile/Index">Profile</a><span></span></li>
+                    
+                    <li><a title="Logout" class="reports"  id="Sign_Out" href="/Login/Sign_out">Logout</a><span></span></li>
+                </ul>
+            </div>
+            <div class="col-md-2 column " style="padding-right:0">
+                <script language="javascript" type="text/javascript">
+                    $(document).ready(function () {
+                        $("#divImageHolder").addClass("StudentPictureSpinner");
+                        var imageUrl = "/Login/GetBase64Image";
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: imageUrl,
+                            contentType: 'application/json',
+                            dataType: "json",
+                            success: function (data) {
+                                //debugger;
+                                $("#divImageHolder").removeClass("StudentPictureSpinner");
+                                var image = data.base64image;
+                                if (image.length > 0) {
+                                    $("#divImageHolder").html("<img  style='float:right' src='data:image/jpg;base64," + image + "'/>");
+                                }
+                                else {
+                                    $("#divImageHolder").html("No Picture Avaiable.");
+                                }
+
+                            },
+                            error: function (xhr) {
+                                $("#divImageHolder").removeClass("StudentPictureSpinner");
+                                $("#divImageHolder").html("Unable to load Picture.");
+                            }
+                        });
+                    });
+
+                </script>
+                <div id="divImageHolder" class="StudentPicture">
+                </div>
+            </div>
+            <div class="col-md-9 column mobile_menu">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="javascript:void(0);">Menu</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a id="DashBoard" style="" href="/Courses/Index">Dashboard</a></li>
+                            <li><a id="RegistrationCard" style="" href="/Courses/Index">Registration Card</a></li>
+                                <li><a id="CourseRegistration" style="" href="/CourseRegistration/Index">Course Registration</a></li>
+                                                        <li><a id="Fees" href="/Fees/Index">Fees</a></li>
+                            <li><a id="ResultCard" style="" href="/ResultCard/Index">Result Card</a></li>
+                            <li><a id="MyProfile" style="" href="/Profile/Index">Profile</a></li>
+                            <li><a id="SupportSystem" style="" href="/Profile/Index">HelpDesk</a></li>
+                            <li><a id="SignOut" href="/Login/Sign_out">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+            <div class="main_body">
+                <div style="min-height: 250px;" class="content_area">
+                    <style>
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../Content/img/Preloader_2.gif) center no-repeat #fff;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+<div class="se-pre-con">
+</div>
+
+
+            <div id="DeviceType" hidden="hidden" style="display:none;">IsMobileDevice = False</div>
+                <script src="../Content/js/sweetalert.min.js"></script>
+                <link rel="stylesheet" href="../Content/css/sweetalert.css">
+                <script>
+
+                    function RegisterCourse(OCID) {
+                        var CourseInformation = $(".AvailableCourses_" + OCID).attr('title');
+                        swal({
+                            title: CourseInformation,
+                            text: "Are you sure to register this course?",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "Green",
+                            confirmButtonText: "Yes",
+                            cancelButtonText: "No",
+                            closeOnConfirm: false,
+                            closeOnCancel: true
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                swal("Please wait...", "Course Registration is in process.", "warning");
+                                /////////////////////////////////////////////////////////////////////////////////////////////
+                                try {
+
+                                    var _URL = '/CourseRegistration/RegisterCourse/' + OCID;
+
+                                    $.ajax({
+                                        type: "GET",
+                                        url: _URL,
+                                        contentType: "application/json;",
+                                        success: function (data) {
+                                            //debugger;
+                                            if (data.result == "true") {
+                                                swal("Course Registered.", CourseInformation + " Successfully Registered. \n" + data.msg + "\n(Page will reload automatically now)", "success");
+                                                setTimeout(location.reload.bind(location), 3000);
+                                            }
+                                            else if (data.result == "false") {
+                                                swal("Course Registation Failed.", data.msg + "\n(Page will reload automatically now)", "error");
+                                                setTimeout(location.reload.bind(location), 5000);
+                                            }
+                                            else {
+                                                swal("Oops", "Something went wrong. Please try later.\n(Page will reload automatically now)", "error");
+                                                setTimeout(location.reload.bind(location), 3000);
+                                            }
+                                        },
+                                        error: function (data) {
+                                            swal("Unable to register course.", "(Page will reload automatically now)", "error");
+                                            location.reload();
+                                        }
+                                    });
+
+                                } catch (e) {
+                                    location.reload();
+                                }
+
+                                /////////////////////////////////////////////////////////////////////////////////////////////
+
+                            }
+                        });
+                    }
+
+                    function DeleteCourse(OCID) {
+
+                        var CourseInformation = $(".RegisteredCourses_" + OCID).attr('title');
+
+                        swal({
+                            title: CourseInformation,
+                            text: "Are you sure to Delete course?",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "Red",
+                            confirmButtonText: "Yes",
+                            cancelButtonText: "No",
+                            closeOnConfirm: false,
+                            closeOnCancel: true
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                swal("Please wait...", "Course Registration deletion is in process.", "warning");
+                                /////////////////////////////////////////////////////////////////////////////////////////////
+                                try {
+                                    var _URL = '/CourseRegistration/DeleteRegisteredCourse/' + OCID;
+                                    //alert(_URL);
+
+                                    $.ajax({
+                                        type: "GET",
+                                        url: _URL,
+                                        contentType: "application/json;",
+                                        success: function (result) {
+                                            //debugger;
+                                            if (result = true) {
+                                                swal("Course Registration Deleted.", CourseInformation + " Successfully Deleted. \n(Page will reload automatically now)", "success");
+                                            }
+                                            else {
+                                                swal("Oops", "Something went wrong. Please try later. \n(Page will reload automatically now)", "error");
+                                            }
+                                            setTimeout(location.reload.bind(location), 2000);
+                                        },
+                                        error: function (data) {
+                                            swal("Unable to register course.", "\n(Page will reload automatically now)", "error");
+                                            location.reload();
+                                        }
+                                    });
+
+                                } catch (e) {
+                                    console.writeline(e);
+                                    location.reload();
+                                }
+
+                                /////////////////////////////////////////////////////////////////////////////////////////////
+
+                            }
+                        });
+                    }
+
+                </script>
+            <div class="table-responsive quiz_listing">
+                <div id="RegisteredCourses">
+
+                    
+                    <div style="background:#13A89E;margin: 10px;text-align: center;padding: 10px;font-weight: bold;color: white;font-size: 16px;">Already Registered Courses</div>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th width="100px">Course No</th>
+                                <th width="450px">CourseName</th>
+                                <th width="75px">Credits</th>
+                                <th width="250px">Teacher</th>
+                                <th title="Program - Semester - Description - Section" width="">Class</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="RegisteredCourses_123863" title="CSC303 | Mobile Application Development (3)">
+                                        <td>
+                                            CSC303
+                                        </td>
+                                        <td>
+                                            Mobile Application Development
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Junaid Ali
+                                        </td>
+                                        <td>
+                                            BSE-7-BSE-7A-A
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-danger" onclick="DeleteCourse(123863)">Delete</button>
+                                                                                    </td>
+                                    </tr>
+                                    <tr class="RegisteredCourses_123864" title="CSC336 | Web Technologies (3)">
+                                        <td>
+                                            CSC336
+                                        </td>
+                                        <td>
+                                            Web Technologies
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Dr. Muhammad Imran
+                                        </td>
+                                        <td>
+                                            BSE-7-BSE-7A-A
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-danger" onclick="DeleteCourse(123864)">Delete</button>
+                                                                                    </td>
+                                    </tr>
+                                    <tr class="RegisteredCourses_123875" title="CSC475 | Numerical Computing (3)">
+                                        <td>
+                                            CSC475
+                                        </td>
+                                        <td>
+                                            Numerical Computing
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Shawana Jamil
+                                        </td>
+                                        <td>
+                                            BSE-7-BSE-7A-A
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-danger" onclick="DeleteCourse(123875)">Delete</button>
+                                                                                    </td>
+                                    </tr>
+                                    <tr class="RegisteredCourses_123879" title="CSE354 | Design Patterns (3)">
+                                        <td>
+                                            CSE354
+                                        </td>
+                                        <td>
+                                            Design Patterns
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Aamir Shabbir Pare
+                                        </td>
+                                        <td>
+                                            BSE-7-BSE-7A-A
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-danger" onclick="DeleteCourse(123879)">Delete</button>
+                                                                                    </td>
+                                    </tr>
+                                    <tr class="RegisteredCourses_123871" title="CSE455 | Software Testing (3)">
+                                        <td>
+                                            CSE455
+                                        </td>
+                                        <td>
+                                            Software Testing
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Najmun Nisa
+                                        </td>
+                                        <td>
+                                            BSE-7-BSE-7A-A
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-danger" onclick="DeleteCourse(123871)">Delete</button>
+                                                                                    </td>
+                                    </tr>
+                                    <tr class="RegisteredCourses_123873" title="CSE498 | Senior Design Project I (2)">
+                                        <td>
+                                            CSE498
+                                        </td>
+                                        <td>
+                                            Senior Design Project I
+                                        </td>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            Dr. Sohail Asghar
+                                        </td>
+                                        <td>
+                                            BSE-7-BSE-7A-A
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-danger" onclick="DeleteCourse(123873)">Delete</button>
+                                                                                    </td>
+                                    </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="AvailableCourses">
+                    <div style="background:#13A89E;margin: 10px;text-align: center;padding: 10px;font-weight: bold;color: white;font-size: 16px;">Courses available for registration.</div>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th width="100px">Course No</th>
+                                <th width="450px">CourseName</th>
+                                <th width="75px">Credits</th>
+                                <th width="250px">Teacher</th>
+                                <th title="Program - Semester - Description - Section" width="">Class</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="AvailableCourses_123865" title="CSC339 | Data Communications and Computer Networks (3) Scheme Type : Current">
+                                        <td>
+                                            CSC339
+                                        </td>
+                                        <td>
+                                            Data Communications and Computer Networks
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123865)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123867" title="CSC356 | Human Computer Interaction (3) Scheme Type : Current">
+                                        <td>
+                                            CSC356
+                                        </td>
+                                        <td>
+                                            Human Computer Interaction
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123867)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123874" title="CSC412 | Visual Programming (3) Scheme Type : Current">
+                                        <td>
+                                            CSC412
+                                        </td>
+                                        <td>
+                                            Visual Programming
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123874)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123877" title="CSE302 | Software Quality Engineering (3) Scheme Type : Current">
+                                        <td>
+                                            CSE302
+                                        </td>
+                                        <td>
+                                            Software Quality Engineering
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123877)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123878" title="CSE303           | Software Design and Architecture (3) Scheme Type : Current">
+                                        <td>
+                                            CSE303          
+                                        </td>
+                                        <td>
+                                            Software Design and Architecture
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123878)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123880" title="CSC110 | Professional Practices for IT (3) Scheme Type : Current">
+                                        <td>
+                                            CSC110
+                                        </td>
+                                        <td>
+                                            Professional Practices for IT
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123880)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123881" title="CSC322 | Operating Systems (3) Scheme Type : Current">
+                                        <td>
+                                            CSC322
+                                        </td>
+                                        <td>
+                                            Operating Systems
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123881)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123882" title="CSC371 | Database Systems I (4) Scheme Type : Current">
+                                        <td>
+                                            CSC371
+                                        </td>
+                                        <td>
+                                            Database Systems I
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123882)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123883" title="CSC462 | Artificial Intelligence (3) Scheme Type : Current">
+                                        <td>
+                                            CSC462
+                                        </td>
+                                        <td>
+                                            Artificial Intelligence
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123883)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123884" title="CSE304 | Object Oriented Software Engineering (3) Scheme Type : Current">
+                                        <td>
+                                            CSE304
+                                        </td>
+                                        <td>
+                                            Object Oriented Software Engineering
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123884)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123885" title="CSE305           | Software Requirement Engineering (3) Scheme Type : Current">
+                                        <td>
+                                            CSE305          
+                                        </td>
+                                        <td>
+                                            Software Requirement Engineering
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123885)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123886" title="CSE350 | Topics in Software Engineering I (3) Scheme Type : Current">
+                                        <td>
+                                            CSE350
+                                        </td>
+                                        <td>
+                                            Topics in Software Engineering I
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123886)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123887" title="EEE241 | Digital Logic Design (4) Scheme Type : Current">
+                                        <td>
+                                            EEE241
+                                        </td>
+                                        <td>
+                                            Digital Logic Design
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123887)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123888" title="MGT101           | Introduction to Management (3) Scheme Type : Current">
+                                        <td>
+                                            MGT101          
+                                        </td>
+                                        <td>
+                                            Introduction to Management
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123888)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123889" title="MTH231           | Linear Algebra (3) Scheme Type : Current">
+                                        <td>
+                                            MTH231          
+                                        </td>
+                                        <td>
+                                            Linear Algebra
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123889)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123890" title="MTH262           | Statistics and Probability Theory (3) Scheme Type : Current">
+                                        <td>
+                                            MTH262          
+                                        </td>
+                                        <td>
+                                            Statistics and Probability Theory
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123890)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123891" title="BIO231 | Fundamentals of Genetics (4) Scheme Type : Current">
+                                        <td>
+                                            BIO231
+                                        </td>
+                                        <td>
+                                            Fundamentals of Genetics
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123891)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123892" title="CSC101 | Introduction to ICT (3) Scheme Type : Current">
+                                        <td>
+                                            CSC101
+                                        </td>
+                                        <td>
+                                            Introduction to ICT
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123892)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123893" title="CSC102           | Discrete Structures (3) Scheme Type : Current">
+                                        <td>
+                                            CSC102          
+                                        </td>
+                                        <td>
+                                            Discrete Structures
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123893)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123894" title="CSC103 | Programming Fundamentals (4) Scheme Type : Current">
+                                        <td>
+                                            CSC103
+                                        </td>
+                                        <td>
+                                            Programming Fundamentals
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123894)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123895" title="CSC211 | Data Structures and Algorithms (4) Scheme Type : Current">
+                                        <td>
+                                            CSC211
+                                        </td>
+                                        <td>
+                                            Data Structures and Algorithms
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123895)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123896" title="CSC241 | Object Oriented Programming (4) Scheme Type : Current">
+                                        <td>
+                                            CSC241
+                                        </td>
+                                        <td>
+                                            Object Oriented Programming
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123896)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123897" title="HUM103           | Communication Skills (3) Scheme Type : Current">
+                                        <td>
+                                            HUM103          
+                                        </td>
+                                        <td>
+                                            Communication Skills
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123897)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123898" title="HUM110           | Islamic Studies (3) Scheme Type : Current">
+                                        <td>
+                                            HUM110          
+                                        </td>
+                                        <td>
+                                            Islamic Studies
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123898)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123899" title="HUM111           | Pakistan Studies (3) Scheme Type : Current">
+                                        <td>
+                                            HUM111          
+                                        </td>
+                                        <td>
+                                            Pakistan Studies
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123899)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123900" title="MTH104 | Calculus and Analytic Geometry (3) Scheme Type : Current">
+                                        <td>
+                                            MTH104
+                                        </td>
+                                        <td>
+                                            Calculus and Analytic Geometry
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123900)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123901" title="CSC322 | Operating Systems (3) Scheme Type : Current">
+                                        <td>
+                                            CSC322
+                                        </td>
+                                        <td>
+                                            Operating Systems
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123901)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123902" title="CSE291 | Introduction to Software Engineering (4) Scheme Type : Current">
+                                        <td>
+                                            CSE291
+                                        </td>
+                                        <td>
+                                            Introduction to Software Engineering
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123902)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123903" title="EEE121 | Electric Circuits Analysis I (4) Scheme Type : Current">
+                                        <td>
+                                            EEE121
+                                        </td>
+                                        <td>
+                                            Electric Circuits Analysis I
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123903)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123904" title="EEE241 | Digital Logic Design (4) Scheme Type : Current">
+                                        <td>
+                                            EEE241
+                                        </td>
+                                        <td>
+                                            Digital Logic Design
+                                        </td>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123904)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123905" title="HUM100           | English Comprehension and Composition (3) Scheme Type : Current">
+                                        <td>
+                                            HUM100          
+                                        </td>
+                                        <td>
+                                            English Comprehension and Composition
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123905)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123906" title="HUM102           | Report Writing Skills (3) Scheme Type : Current">
+                                        <td>
+                                            HUM102          
+                                        </td>
+                                        <td>
+                                            Report Writing Skills
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BSE-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123906)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123461" title="MTH105           | Multivariable Calculus (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            MTH105          
+                                        </td>
+                                        <td>
+                                            Multivariable Calculus
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Dr. Bilal Ashraf
+                                        </td>
+                                        <td>
+                                            BCS-3-BCS-3A-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123461)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123475" title="MTH105           | Multivariable Calculus (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            MTH105          
+                                        </td>
+                                        <td>
+                                            Multivariable Calculus
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BCS-4-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123475)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123501" title="MTH105           | Multivariable Calculus (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            MTH105          
+                                        </td>
+                                        <td>
+                                            Multivariable Calculus
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BCS-5-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123501)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123523" title="MTH105           | Multivariable Calculus (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            MTH105          
+                                        </td>
+                                        <td>
+                                            Multivariable Calculus
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BCS-6-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123523)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123539" title="CSC496 | Data Warehousing and Data Mining (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            CSC496
+                                        </td>
+                                        <td>
+                                            Data Warehousing and Data Mining
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Dr. Malik Ahmad Kamran
+                                        </td>
+                                        <td>
+                                            BCS-6-BCS-6AB-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123539)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123543" title="CSC354 | Machine Learning (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            CSC354
+                                        </td>
+                                        <td>
+                                            Machine Learning
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Usman Yaseen
+                                        </td>
+                                        <td>
+                                            BCS-6-BCS-6AB-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123543)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123591" title="MTH105           | Multivariable Calculus (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            MTH105          
+                                        </td>
+                                        <td>
+                                            Multivariable Calculus
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BCS-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123591)">Register</button>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="AvailableCourses_123605" title="CSC496 | Data Warehousing and Data Mining (3) Scheme Type : Other_Scheme">
+                                        <td>
+                                            CSC496
+                                        </td>
+                                        <td>
+                                            Data Warehousing and Data Mining
+                                        </td>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            Misc Faculty (VF)
+                                        </td>
+                                        <td>
+                                            BCS-7-NULL-A
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" onclick="RegisterCourse(123605)">Register</button>
+
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+                </div>
+            </div>
+
+        <footer>
+    <div class="col-md-12 column footer_menu">
+        <div title="CUONLINE Student Portal Update Version Number 7.0" class="inner_row">
+            <p>
+                <a  style="font-weight: bold;font-size: 15px;" href="http://itscomsats.com/" target="_blank">
+                    CUOnline
+                </a>, Principal Seat &copy; 2018-COMSATS &reg;
+            </p>
+        </div>
+    </div>
+</footer>
+    </div>
+</body>
+</html>

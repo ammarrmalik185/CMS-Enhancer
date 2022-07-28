@@ -1,0 +1,19 @@
+{
+  background:"white"
+  backgroundMain: "image",
+  noticeboardBackground: "image (green)"
+
+  base: "white",
+  altBase: "off white",
+  primary: "dark blue",
+  secondary: "cyan",
+
+  fontColor: "black",
+  altFontColor: "white",
+  linkFontColor: "blue",
+  heighlightFont: "yellow",
+
+  positiveBar: "green",
+  altPositiveBar: "light green"
+  negativeBar: "red"
+}

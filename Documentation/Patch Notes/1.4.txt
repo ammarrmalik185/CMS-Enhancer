@@ -1,0 +1,5 @@
+Version 1.4:
+
+- Mark summary marks now show in tables instead of text
+- Mark summary along with calculated marks can be downloaded as a text file be pressing the save as text file button
+- There are more options available for mark calculation along with internal marks (click on extension button to access)

@@ -1,0 +1,18 @@
+html {
+  width: 700px;
+  height: 100px;
+}
+
+body {
+  background: rgb(255,254,254);
+  height: 750px;
+  width: 100%;
+  min-height: 0px;
+  max-height: 750px;
+  background: #404040;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+

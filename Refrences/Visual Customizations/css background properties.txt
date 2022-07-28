@@ -1,0 +1,24 @@
+// center
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+
+// tile
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: unset;
+
+// fit
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+// fill
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+// stretch
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;

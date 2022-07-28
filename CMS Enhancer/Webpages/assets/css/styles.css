@@ -1,0 +1,14 @@
+body {
+  color: white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* temporary disables */
+
+.fa.fa-eye.themeOption {
+  display: none;
+}
+

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://cms.comsats.edu.pk:8083/Login/Index -->
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./CUOnline Student Portal_files/saved_resource"></script><script async="" src="./CUOnline Student Portal_files/GetCityDetails"></script>
+    
+    
+    <title>CUOnline Student Portal</title>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cms.comsats.edu.pk:8083/Content/img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://cms.comsats.edu.pk:8083/Content/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://cms.comsats.edu.pk:8083/Content/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://cms.comsats.edu.pk:8083/Content/img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="https://cms.comsats.edu.pk:8083/Content/img/fav.png">
+
+    <link href="./CUOnline Student Portal_files/bootstrap.css" rel="stylesheet">
+<link href="./CUOnline Student Portal_files/style.css" rel="stylesheet">
+<link href="./CUOnline Student Portal_files/style_cuonline_portal.css" rel="stylesheet">
+ 
+
+    <script type="text/javascript" async="" src="./CUOnline Student Portal_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-UFG2SjvbCJOT8Cxli3hNHLheaEdZaoladU0nE5KaRSZWJsW1IBKsnzmeV4IcpE+3"></script><script src="./CUOnline Student Portal_files/jquery-1.10.2.js.download"></script>
+<script src="./CUOnline Student Portal_files/bootstrap.js.download"></script>
+
+    
+    <script src="./CUOnline Student Portal_files/html5shiv.js.download"></script>
+<script src="./CUOnline Student Portal_files/less-1.3.3.js.download"></script>
+<script src="./CUOnline Student Portal_files/MenuActivation.js.download"></script>
+ 
+
+<style>
+    .main_body .content_area {
+        padding: 0 0 10px 0;
+        margin: 10px 0;
+    }
+
+        .main_body .content_area .title_search_area {
+            border-radius: 0;
+        }
+
+    .question_box h3 {
+        margin: 50px 0;
+        text-align: center;
+        font-size: 30px;
+    }
+
+
+</style><link rel="stylesheet" type="text/css" href="chrome-extension://meijibggmcnfpfkplaghemchcjnpfgkp/relaventCss.css"></head>
+
+
+
+<body style="">
+    <script>
+
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+
+    <div class="container">
+            <div class="main_body">
+                <div style="min-height: 250px;" class="content_area">
+                    <style>
+    .no-js #loader {
+        display: none;
+    }
+
+    .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(../Content/img/Preloader_2.gif) center no-repeat #fff;
+    }
+</style>
+<script src="./CUOnline Student Portal_files/jquery.min.js.download"></script>
+<script src="./CUOnline Student Portal_files/modernizr.js.download"></script>
+
+<div class="se-pre-con" style="display: none;"><div id="msg" style=" color: blue; text-align: center; margin-top: 250px; font-size: 20px;">Please wait while we are loading your login profile...</div></div>
+
+<script src="./CUOnline Student Portal_files/api.js.download"></script>
+<script src="./CUOnline Student Portal_files/LoginPage.js.download"></script>
+<link href="./CUOnline Student Portal_files/LoginPage.css" rel="stylesheet">
+
+<style>
+.imp_notice_msg{float: left;}
+.imp_notice_msg img{float:left; width:50px;}
+.imp_notice_msg p{color: #fff; font-weight: bold; float:left;}
+</style>
+
+<div class="row row2">
+    <div class="col-md-12" style="padding: 0;">
+        <div class="row top_blue_bg">
+            <div class="main_center_alligned">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 top_logo"><img alt="Logo" src="./CUOnline Student Portal_files/logo_with_text.png"></div>
+                        <div class="col-md-6 top_comsis">
+                            <img id="StudentConsole" alt="Logo" src="./CUOnline Student Portal_files/CUOnlineStudentConsole.png">
+                            <img id="ParentConsole" alt="Logo" src="./CUOnline Student Portal_files/CUOnlineParentConsole.png" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row row2">
+    <div class="main_center_alligned">
+        <div class="col-md-12">
+            <div class="row">
+			
+			<span style="display:none;" class="imp_notice_msg">
+			<img src="./CUOnline Student Portal_files/new.gif" title="" alt="">
+			<p>If you are unable to login your account, Please use forget password link (Password will be sent to your registered email address).<br>
+if your registered email address is not correct, please contact academic/registrar office to correct/update your email address.</p>
+</span>
+
+                <div class="col-md-8 notice_board">
+                    <h3><img src="./CUOnline Student Portal_files/NoticeBoardtitle.png"></h3>
+                    <ul>
+					
+					<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/CamScanner06-29-202111.38.pdf"><b>Attention Students (Fee Fall 2021)</b></a>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/kamyabJawanProgram.pdf"><b>KAMYAB JAWAN PEPSICO ROSHAN KAL INTERNSHIP PROGRAMME</b></a>
+</li>
+					
+					<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/PhD_Programme_and_Postdoctoral_Fellowships.zip"><b>PhD Programme and Postdoctoral Fellowships offered by the Communications, Signal Processing, and Networking Center (CoSINC), Istanbul Medipol University, Istanbul, Turkey.</b></a>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/2021_KOICA_SCHOLARSHIP.pdf"><b>2021 KOICA SCHOLARSHIP PROGRAM FOR MASTER’S DEGREE</b></a>
+</li>
+					
+<li class="list-item">
+<a href="javascript:void(0);"><b>
+Attention students,</b></a><br>
+Due to Technical error on Microsoft Cloud MS Teams is not working. Technical Teams of HEC and Microsoft are working to resolve the issue ASAP.
+</li>
+
+<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/International_Competitions_from_TUBITAK_Turkey.pdf"><b>International Competitions from TUBITAK Turkey</b></a>
+</li>
+						
+						
+					
+<li class="list-item">
+<a href="javascript:void(0);"><b>
+Attention students,</b></a><br>
+Please submit the following documents to the Academics Department at earliest.<br>
+1:Migration Certificate  (NOC).<br>
+2: Result card of HSS (Intermediate).<br>
+3: A Levels Equivalence Certificate.<br>
+Note. Please verify the followings<br>
+1: Your Name , Father's Name, in terms of spelling and sequence as per SSC ( Matric / O Levels ).<br>
+2: D.O.B as per SSC ( Matric/ O Levels).<br>
+3:CNIC NO.<br>
+on CUI portal record to avoid any complication at later stage.<br>
+
+</li>
+
+
+
+
+
+					
+					<li class="list-item">
+<a href="javascript:void(0);"><b>Students graduating in session Fall 2020 are required to submit thier final clearance certificate and other outstanding documents by Friday, January 22, 2021. They may contact their respective departmental coordinators regarding entry at campus to this effect.</b></a>
+</li>
+
+					<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/ms_teams_tutorial.pptx"><b>Tutorial: How to Use Microsoft Teams.</b></a>
+<br>For FALL 2020 students, MS Teams Account is issued to Undergraducate Students only.
+</li>
+					
+					<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/FATAScholaShipAdv2020-21.jpeg"><b>Announcement of Undergraduate Scholarships for Students of Balochistan and Erstwhile FATA Phase II, Website Banner </b></a>
+</li>
+					
+					<li class="list-item">
+                            <b>Undergraduate programs teaching in Fall 2020</b>
+                            All undergraduate teaching except for the first semester will start from 14th September 2020. All courses will be initially taught online and labs will be conducted physically on campus. Timetable for online teaching and on-campus laboratory sessions will be shared by respective departments.  
+                        </li>
+						
+					
+					<li class="list-item">
+                            <b>Orientation Semester Fall 2020</b>
+                            The orientation of newly admitted students is scheduled to be held, department wise from September 18 – 20, 2020 at COMSATS University Islamabad, Islamabad Campus. This time, due to precautionary measures for Covid-19 Pandemic, parents are not invited to attend the orientation session. The schedules of orientation for different departments will be communicated by Monday September 14, 2020 by noon.  <br>
+Regular online classes for first semester students will start from September 21, 2020. 
+                        </li>
+						
+					
+					<li class="list-item">
+                            <b>Graduate programs teaching in Fall 2020</b>
+                            All graduate teaching except for first semester will start from 14th September 2020. All course will be taught physically on campus. Timetable for on campus teaching will be shared by the respective departments.  <br>
+First semester graduate teaching will start from 21st September 2020. 
+                        </li>
+					
+					<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/under_graduate.jpg"><b>Notification: Fee Fall 2020 Extention (Undergraduate)</b></a>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/graduate.jpg"><b>Notification: Fee Fall 2020 Extention (Graduate)</b></a>
+</li>
+
+					
+					<!--<li class="list-item">
+<a target="_blank" href="../../PortalSubmissions/Portal Attachments/RemoteAccessToCUIDigitalResources.pdf"><b>Remote Access to CUI Digital Resources</b></a>
+</li>-->
+					
+					<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/NotificationRevisedUndergraduateCalendar.pdf"><b>Notification: Revised Undergraduate Calendar</b></a>
+</li>
+					
+				<li class="list-item">
+<a target="_blank" href="https://cms.comsats.edu.pk:8083/PortalSubmissions/Portal%20Attachments/NotificationRevisedGraduateCalendar.pdf"><b>Notification: Revised Graduate Calendar</b></a>
+</li>
+
+
+
+<!--	
+					<li class="list-item">
+                        <a target="_blank" href="../PortalSubmissions/Portal Attachments/Fee_Fall_2019_Extension_Undergradutate_Program.jpg">
+						<b>Fee Fall 2019 Extension Undergradutate Program</b>
+						</a>
+					</li>
+					
+					<li class="list-item">
+                        <a target="_blank" href="../PortalSubmissions/Portal Attachments/Fee_Fall_2019_Extension_Graduate_Program.jpg">
+						<b>Fee Fall 2019 Extension Graduate Program</b>
+						</a>
+					</li> 
+
+
+<li class="list-item">
+<a target="_blank" href="../../PortalSubmissions/Portal Attachments/Revised Undergraduate Schedule.pdf"><b style="font-size: 24px; text-decoration: underline; color: pink; ">Revised Undergraduate Schedule</b></a>
+</li>
+					
+				<li class="list-item">
+<a target="_blank" href="../../PortalSubmissions/Portal Attachments/Revised Graduate Schedule.pdf"><b style="font-size: 24px; text-decoration: underline; color: pink; ">Revised Graduate Schedule</b></a>
+</li>
+
+
+<li class="list-item">
+<a target="_blank" href="https://service.elsevier.com/app/answers/detail/a_id/28208/supporthub/elsevieraccess/p/15095/"><b>Elsevier's Remote Access Guide for Your University</b></a>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="https://onlinelibrary.wiley.com/action/showLogin?uri=%2F"><b>Wiley Online Library's Access through UN/PW through UN/PW for your university</b></a>
+<p>
+ In the present situation across the world, where every body is being asked to stay at home and keep safe which  has caused universities to closed down all over the world. Wiley to support the students, faculty and the researchers during the COVID-19 lockdown period have provided the username/password access which they can benefit from while remaining in their homes or away from the university campuses as well.
+</p>
+<p>
+Username: HIGHEDUPAKIS <br />
+Password: Wiley12345
+</p>
+</li>
+
+
+<li class="list-item">
+<a target="_blank" href="https://ieeexplore.ieee.org/Xplore/home.jsp"><b>AIEEE access through UN/PW for your university</b></a>
+<p>
+As per the extraordinary outcome of the COVID-19 in the world, IEEE is completely committed to support the students/faculties/researchers from the IEL subscribing universities within Pakistan to be able to continue their research work through our databases, as usual from their homes as were they doing from the university campuses. For this we have activated the access for your university through username/password. Please let your faculty and students know to simply go to
+</p>
+<p>
+Username: 15COMM77 <br />
+Password: BPgY3F
+</p>
+</li>
+
+<li class="list-item">
+<a target="_blank" ><b>Attention Students: (Office365 Email Accounts Created for All Students)</b></a>
+<p>
+Please login to your CUOnline Portal and Click on "Profile" to view your credentials. You will have official Email and several Apps to help you in learning remotely.
+</p>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/New Doc 2020-01-28 14.09.14_1.pdf"><b>Attention Students: (Fee Spring 2020-Probation)</b></a>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Announcement of PEEF Scholarship for Minorities only-Science Group Students of FA-19 Semester.zip"><b>Announcement of PEEF Scholarship for Minorities only-Science Group Students of FA-19 Semester. Click To Download</b></a>
+</li>
+
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Peef Announcement for the FA-19 Semester.zip"><b>Peef Announcement for the FA-19 Semester. Click To Download</b></a>
+
+</li>
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Announcement_of_National_Bank_of_Pakistan_Loan_Scheme_for_Educations_(Mark-up_Free).zip"><b>Announcement of National Bank of Pakistan Loan Scheme for Educations (Mark-up Free)</b></a>
+
+</li>
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Announcement_of_BEEF_Scholarship_Fall-2019_Intake.zip"><b>Announcement of BEEF Scholarship Fall-2019 Intake</b></a>
+
+</li>
+
+
+<li class="list-item">
+<b>
+As per the directives of the Islamabad High Court, academics activities at all Campuses of COMSATS University Islamabad including examination will continue uninterrupted. Students are advised to appear in their Examination as earlier scheduled.
+</b>
+</li>
+
+
+<li class="list-item">
+<b>FALL 2019 Datesheet is now avaiable at Student Portal. Please login and check your datesheet accordinly.</b>
+</li>
+
+
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Financial_assistance.zip">
+<b>Announcement of Financial Assistance for FA-19 Semester</b>
+</a>
+</li> -->
+
+<li class="list-item">
+<b>Mobile Application</b>
+View your marks,notifications,news,events etc.
+<a target="_blank" href="https://play.google.com/store/apps/details?id=cuonline.com.cui">
+<img style="width:17%;" src="./CUOnline Student Portal_files/en_badge_web_generic.png">
+</a>
+</li>
+
+
+<!--
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/announcement _ehsaas_program.zip">
+<b>Announcement of EHSAAS Undergraduate Scholarshp for BS Level</b>
+</a>
+</li>
+
+
+<li class="list-item">
+ <a href="javascript:void(0);">
+<b>CUI Islamabad campus will have regular classes as per routine from Tuesday, 5th November 2019.</b>
+</a>
+<p>It is to inform all that CUI Islamabad campus will have regular classes as per routine from Tuesday, 5th November 2019.</p>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/OnlineCourses.pdf">
+<b>DigiSkills: Learn online - Earn online</b>
+</a>
+</li>
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Fwd__FFC_Scholarships_For_the_Ward_of_Farmers_-_2019.zip">
+<b>Announcement of Scholarship, Form of Scholarship and Brochure of Scholarship for the Ward  Of Farmers for FA-19</b>
+</a>
+</li>
+
+<li class="list-item">
+<b>In view of tragic incident on Friday, October 4, 2019 at Islamabad Campus, all sessional exams at Islamabad Campus are hereby postponed until next Monday, October 14, 2019.
+No classes shall be held on Monday October 7, 2019. Regular classes shall be held from Tuesday, October 8, 2019.
+All Faculty members are required to observe regular office hours on Monday October 7, 2019.</b>
+</li> 
+
+<li class="list-item">
+<b>Last date for submission of online application form for Postgraduate Scholarships has been extended till Monday, August 26, 2019.</b>
+</li>
+
+
+<li class="list-item">
+<a target="_blank" href="../PortalSubmissions/Portal Attachments/Announcement.zip">
+<b>Announcement-Postgraduate Scholarships for studetns of balochistan and Erstwhile FATA</b>
+</a>
+</li>
+
+<li class="list-item">
+						<a target="_blank" href="../PortalSubmissions/Portal Attachments/Pakistani Scottish Scholarship 2019 Announcement for the Year 2019 -20.docx">
+						<b>Invitation of Applications for Pakistani Scottish Scholarship for the year 2019-20</b>
+						</a>
+					</li>
+					
+					
+<li class="list-item">
+						<a target="_blank" href="../PortalSubmissions/Portal Attachments/Scottish Scholarship 2019-20 Bachelor's Flyer.pdf">
+						<b>Scottish Scholarship 2019-20 Bachelor's Flyer</b>
+						</a>
+					</li>
+					
+					<li class="list-item">
+						<a target="_blank" href="../PortalSubmissions/Portal Attachments/Scottish Scholarship 2019-20 Master's Flyer.pdf">
+						<b>Scottish Scholarship 2019-20 Master's Flyer</b>
+						</a>
+					</li>
+
+					
+					
+					<li class="list-item">
+						<b>Attention Students - Terminal Examinations</b>
+						<br>Terminal Examinations Spring 2019 of CUI, Islamabad Campus are being commenced w.e.f June25, 2019 and students of CUI, Islamabad Campus are requested to please login at portal to check your final date sheet.</br>
+					</li>
+
+					<li class="list-item">
+                        <a target="_blank" href="../PortalSubmissions/Portal Attachments/fee_extension_undergrad.jpg">
+						<b>Fee Extension Notification for Under Graduate Students</b>
+						</a>
+					</li>
+					
+					<li class="list-item">
+                        <a target="_blank" href="../PortalSubmissions/Portal Attachments/fee_extension_grad.jpg">
+						<b>Fee Extension Notification for Graduate Students</b>
+						</a>
+					</li>
+					
+					<li class="list-item">
+                        <b>Tentative datesheet for SP19 is now available. Please login to your portal to review the datesheet.</b>
+					</li>
+
+					
+						<li class="list-item">
+							<b>Join COMSATS Leader Shift Program fully funded by COMSATS University Islamabad.</b>
+							<br>Eligibility : Undergraduate students. Semesters 5 & 6. CGPA 3.2 or above. 
+							<br><a target="_blank" href="../PortalSubmissions/Portal Attachments/LeaderShiftProgram.zip" target="_blank">
+							For more details Click Here.
+							</a>
+                        </li>
+						
+						<li class="list-item">
+                            <b>Attention Students (FEE Fall 2019 for Under Graduate Program)</b>
+                            <a target="_blank" href="../PortalSubmissions/Portal Attachments/FeeFall2019UnderGrad.pdf" target="_blank">
+							Click Here to Download
+							</a>
+                        </li>-->
+						
+                        <li class="list-item">
+                            <b>Issues and Complaints</b>
+                            * Make sure to clear your browser cache for this website to receive portal updates.
+                            <br> In case of any issue or complaint regarding portal please contact your Departmental Coordinator.
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4 tab_area">
+                    <div class="tabbable" id="tabs-745958">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link active" href="https://cms.comsats.edu.pk:8083/Login/Index#panel-629396" data-toggle="tab" id="show_masked">By Roll No</a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://cms.comsats.edu.pk:8083/Login/Index#panel-105945" data-toggle="tab" id="show_regular">By List</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="panel-629396">
+                                <form method="post" onsubmit="return validateForm()" role="form" class="form1" _lpchecked="1">
+
+
+                                    <span id="ErrorMessage" title="ISB" style="font-size:12px;color:Red;font-style:italic;">
+                                        
+                                        <span id="ApiExceptionDetails" style="display:none;">
+                                            
+                                        </span>
+                                    </span>
+
+                                    <div id="masked_contaner" class="form-group masked_class controls_container">
+                                        <span class="shell">CIIT/<span aria-hidden="true" id="MaskedRegNoMask"><i>fa18-bse-011</i></span>/ISB<input id="MaskedRegNo" type="text" pattern="\w\w\d\d-\w\w\w-\d\d\d" class="masked form-control" data-charset="__XX-___-XXX" title="Enter 10 Character Registration Number(Input is Auto Correct)." maxlength="12" data-placeholder="AA00-BBB-000" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"></span>
+                                    </div>
+                                    <div id="reguler_contaner" class="form-group regular_class controls_container" style="display: none;">
+                                        <div id="URL_LoadSessionsAndPrograms" style="display:none;">/Login/LoadSessionsAndPrograms</div>
+                                        <div id="SessionsAndPrograms" class="form-group regular_class controls_container loader">
+                                            <div id="Sessions"></div>
+                                            <div id="Programs"></div>
+                                            <input type="text" name="reg_last_part" id="ComboRegNo" class="disable_regular_reg form-control" maxlength="3" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group pass_contaner controls_container">
+                                        <input class="form-control" id="Password" name="Password" required="required" type="password" placeholder="Password" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);">
+                                    </div>
+                                    <div class="form-group captcha_contaner controls_container">
+                                        <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LfOHSYUAAAAAPqmsHGoc8qhToQTsK9nGFUsrTmF"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="./CUOnline Student Portal_files/anchor.html" width="304" height="78" role="presentation" name="a-kdjtsaneytby" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./CUOnline Student Portal_files/saved_resource(1).html"></iframe></div>
+                                    </div>
+                                    <div class="checkbox rememberme controls_container">
+                                            <button style="height: 45px; width: 70px;" id="LoginSubmit" type="submit" class="btn btn-primary">Login</button>
+                                        <input type="hidden" id="RegNo" name="RegNo" value="FA18-BSE-011">
+                                        <input type="hidden" id="Local_InternetInformation" name="Local_InternetInformation">
+                                        <input type="hidden" id="Public_InternetInformation" name="Public_InternetInformation">
+                                        <input type="hidden" id="ClientAppAndOSVersion" name="ClientAppAndOSVersion" value="Windows 10 ---&gt; Details : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36 Edg/91.0.864.59">
+                                        Forgot Password ? <a href="https://cms.comsats.edu.pk:8083/ResetPassword/Request">Click Here!</a>
+                                        <br>
+                                        <div id="LogoLoginTypeLink"><input type="hidden" name="RelationID" value="1"><a style="text-decoration:underline; color:red; font-size:16px; cursor:pointer;font-weight:bold; " onclick="SwitchConsole(&#39;Parent&#39;)">For Parent Console</a></div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="tab-pane" id="panel-629396">
+                                <p>Tab2 Container</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8 latest_news">
+                    <div class="page-header"><h1>Latest</h1></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-block">
+									<h5 class="card-title">CPR Guide</h5>
+                                    <p class="card-text">
+                                        <iframe width="100%" height="auto" src="./CUOnline Student Portal_files/bAM0YkNLf7M.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>How to do CPR on an Adult over 12 years age.
+                                    </p>
+									<p style="margin:0;"><a class="btn btn-primary" target="_blank" href="https://www.youtube.com/channel/UCNP6oTsWBxIyiprLhQ8xg1g">Learn More</a></p>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-md-4">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h5 class="card-title">COMSATS</h5>
+                                    <p class="card-text">
+                                         <iframe width="100%" height="auto" src="./CUOnline Student Portal_files/8kJAeYR7-xw.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+									COMSATS University Islamabad Introduction.
+                                    </p>
+                                    <p style="margin:0;"><a class="btn btn-primary" target="_blank" href="http://ww3.comsats.edu.pk/ciitblogs/Aboutus.aspx">Learn More</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h5 class="card-title">NEWS</h5>
+                                    <iframe width="100%" height="auto" src="./CUOnline Student Portal_files/r9jgXMq7Iaw.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+									<p class="card-text">
+                                        Eagle Eye With Moazam Shahbaz, 20 Oct 2019 (Din News)
+                                    </p>
+                                    <p style="margin:0;"><a class="btn btn-primary" target="_blank" href="http://ww3.comsats.edu.pk/ciitblogs/Blogs.aspx">Learn More</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 events">
+                    <div class="page-header"><h1>Events</h1></div>
+
+                    <div class="event_container">
+                        <div class="single_event">
+                            <div class="date_time">
+                                <p class="date_month"><span class="date">22</span><span class="month">July</span></p>
+                                <p class="time">22-31 July, 2019</p>
+                            </div>
+                            <div class="event_text"><p>COMSATS Summer Workshops Art, Design &amp; Architecture</p></div>
+                            <a target="_blank" href="http://ww3.comsats.edu.pk/CIITBlogs/BlogsDetailsOuter.aspx?ArticleId=155037">Read More</a>
+                        </div>
+
+                        <div class="single_event">
+                            <div class="date_time">
+                                <p class="date_month"><span class="date">11</span><span class="month">July</span></p>
+                                <p class="time">11-12 July, 2019</p>
+                            </div>
+                            <div class="event_text"><p>Training Workshop on "PYTHON: Data Analysis and Visualization"</p></div>
+                            <a target="_blank" href="http://ww3.comsats.edu.pk/ciitblogs/BlogsDetailsOuter.aspx?ArticleId=155026">Read More</a>
+                        </div>
+
+                        <div class="single_event">
+                            <div class="date_time">
+                                <p class="date_month"><span class="date">22</span><span class="month">April</span></p>
+                                <p class="time">22 April 2019</p>
+                            </div>
+                            <div class="event_text"><p>Seminar: Interpreting Data and Improving Public Health Communication’ </p></div>
+                            <a target="_blank" href="https://www.comsats.edu.pk/NEFiles/Card.jpg">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+
+        <footer>
+    <div class="col-md-12 column footer_menu">
+        <div title="CUONLINE Student Portal Update Version Number 7.0" class="inner_row">
+            <p>
+                <a style="font-weight: bold;font-size: 15px;" href="http://itscomsats.com/" target="_blank">
+                    CUOnline
+                </a>, Principal Seat © 2018-COMSATS ®
+            </p>
+        </div>
+    </div>
+</footer>
+    </div>
+
+<div id="__lpform_MaskedRegNo" style="max-height: 16px; vertical-align: top; position: absolute; top: 244.818px; left: 1446.72px; z-index: 27;"><img id="__lpform_MaskedRegNo_icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAARNJREFUOBGlU72ORWAQPYREq9CtRryBQqJSaGziATyB1/AaV3c7ryAegUZHfxM1hUTiZ82EXbvVcicx35yZOWe+nxDiOP4E8FjX9WNb/22CILy25kjc3GUyTdkHPsSrk4l8GHFpB2/ZbQFVVXnwbQHXdX8EJEkCJRzHwXa7XLAsC57nQVEUxoZhwPd9aJrG+HASBbZtswDFXdeh73sEQUAQsiwjz3OEYcixrutIkoRr5PgI0zR9Jyj+i7fbxjzP3HOuUYJ3UBQFlmXBOI5omoYb0zQFXVRZlkx+Pp8wTRNVVXH9cCxAZBI5W13XZ4i2bfn7ldzA7VfIsoy1bgsMw/CewHEUcf+rDnxpJS4dIbojsnOiL0hfafwTOClcAAAAAElFTkSuQmCC" style="opacity: 0.6; vertical-align: top;" height="16" width="16"></div><div id="__lpform_Password" style="max-height: 16px; vertical-align: top; position: absolute; top: 292.818px; left: 1446.72px; z-index: 26;"><img id="__lpform_Password_icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAARNJREFUOBGlU72ORWAQPYREq9CtRryBQqJSaGziATyB1/AaV3c7ryAegUZHfxM1hUTiZ82EXbvVcicx35yZOWe+nxDiOP4E8FjX9WNb/22CILy25kjc3GUyTdkHPsSrk4l8GHFpB2/ZbQFVVXnwbQHXdX8EJEkCJRzHwXa7XLAsC57nQVEUxoZhwPd9aJrG+HASBbZtswDFXdeh73sEQUAQsiwjz3OEYcixrutIkoRr5PgI0zR9Jyj+i7fbxjzP3HOuUYJ3UBQFlmXBOI5omoYb0zQFXVRZlkx+Pp8wTRNVVXH9cCxAZBI5W13XZ4i2bfn7ldzA7VfIsoy1bgsMw/CewHEUcf+rDnxpJS4dIbojsnOiL0hfafwTOClcAAAAAElFTkSuQmCC" style="opacity: 0.6; vertical-align: top;" height="16" width="16"></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative; width: 0px; height: 0px;"><iframe title="recaptcha challenge" src="./CUOnline Student Portal_files/bframe.html" name="c-kdjtsaneytby" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" style="width: 0px; height: 0px;"></iframe></div></div></body></html>

@@ -1,0 +1,63 @@
+.subHeading {
+  font-size: 25px;
+}
+
+.radioButton {
+  margin: 10px;
+}
+
+.themeOption {
+  margin: 0px 5px;
+  font-size: 20px;
+}
+
+.themeOptionsContainer {
+  width: 19%;
+  display: inline-block;
+  text-align: right;
+}
+
+.themeSelectionContainer {
+  width: 80%;
+  display: inline-block;
+}
+
+#addNewThemeButton {
+  background-color: transparent;
+  width: 80%;
+  color: rgb(255,255,255);
+  border: dashed 1px rgb(245,245,245);
+}
+
+.addNewButtonContainer {
+  margin: 10px;
+  text-align: center;
+}
+
+.colorViewer {
+  margin: 0px 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 100%;
+}
+
+.colorViewerContainer {
+  text-align: center;
+}
+
+.col-12.col-sm-11.col-md-9.mainContentArea {
+  background-color: #5d5d5d;
+}
+
+.list-group-item {
+  background: #5c5c5c;
+  color: white;
+}
+
+.themeOption:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+

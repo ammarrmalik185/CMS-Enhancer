@@ -1,0 +1,52 @@
+﻿.progress {
+    background-color: #d9534f;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.progress-zero {
+    background-color: #ccc;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.progress-bar-zero {
+    width: 0;
+    animation: progress 5.0s ease-in-out forwards;
+    background-color: #ccc;
+}
+
+.progress-bar {
+    width: 0;
+    animation: progress 5.0s ease-in-out forwards;
+    background-color: #5cb85c;
+}
+
+.title {
+    opacity: 0;
+    animation: show 0s forwards ease-in-out 0s;
+}
+
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}

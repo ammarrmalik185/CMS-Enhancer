@@ -1,0 +1,15 @@
+Version 1.2:
+
+- Added Themes
+  - Use dark and light Themes (old dark mode is removed)
+  - Create your own Themes
+  - Share your Themes
+  - Change Themes from the popup
+
+- Added Support for more campuses
+  - Lahore Campus
+  - Attock Campus
+  - Sahiwal Campus
+  - Vehari Campus
+  - Wah Campus
+

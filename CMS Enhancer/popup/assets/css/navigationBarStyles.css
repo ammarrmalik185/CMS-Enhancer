@@ -1,0 +1,26 @@
+#leftSideBarContainer {
+  height: 600px;
+}
+
+#leftSideBar {
+  background: rgb(72,72,72);
+}
+
+#leftNavBarContentsContainer {
+}
+
+#leftNavBarContents {
+  height: 230px;
+  min-height: 257px;
+  margin: 0;
+}
+
+.nav-item.navItem {
+  vertical-align: middle;
+}
+
+.nav-link.active.navItemText {
+  font-size: 16px;
+  font-family: ABeeZee, sans-serif;
+}
+

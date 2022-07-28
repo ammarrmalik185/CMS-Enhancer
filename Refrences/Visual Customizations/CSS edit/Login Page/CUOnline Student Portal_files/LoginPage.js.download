@@ -1,0 +1,425 @@
+/////// Very Important on Global Level.//////
+var TabCheckStatus = 'Masked';///////////////
+var ConsoleType = 'Student';///////////////
+/////////////////////////////////////////////
+
+function SwitchConsole(console_type) {
+    //debugger;
+    if (console_type == 'Parent') {
+        $("#LogoLoginTypeLink").html("<input type='hidden' name='RelationID' value='2'  /><a style='text-decoration:underline; color:red; font-size:16px; cursor:pointer;font-weight:bold; ' onclick=\"SwitchConsole('Student')\">For Student Console</a>");
+        jQuery('#StudentConsole').hide();
+        jQuery('#ParentConsole').show();
+        ConsoleType = 'Parent';
+    } else {
+        $("#LogoLoginTypeLink").html("<input type='hidden' name='RelationID' value='1'  /><a style='text-decoration:underline; color:red; font-size:16px; cursor:pointer;font-weight:bold; ' onclick=\"SwitchConsole('Parent')\">For Parent Console</a>");
+        jQuery('#ParentConsole').hide();
+        jQuery('#StudentConsole').show();
+        ConsoleType = 'Student';
+    }
+}
+
+jQuery(document).ready(function (e) {
+
+    SwitchConsole(ConsoleType);
+    var geoplugin = "";
+    var ipapi = "";
+    var localMachineIP = "";
+
+    /*Get Local IP Of Computer*/
+    window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;   //compatibility for firefox and chrome
+    var pc = new RTCPeerConnection({ iceServers: [] }), noop = function () {
+    };
+    pc.createDataChannel("");    //create a bogus data channel
+    pc.createOffer(pc.setLocalDescription.bind(pc), noop);    // create offer and set local description
+    pc.onicecandidate = function (ice) {  //listen for candidate events
+        if (!ice || !ice.candidate || !ice.candidate.candidate) return;
+        var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+        localMachineIP = myIP;
+        //console.log('localMachineIP');
+        //console.log(localMachineIP);
+        $("#Local_InternetInformation").val(localMachineIP);
+        pc.onicecandidate = noop;
+    };
+    /*####################################*/
+
+    /*Get Global/Internet Address IP of Machine*/
+
+    $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function (data) {
+        geobytes = JSON.stringify(data, null, 2);
+        $("#Public_InternetInformation").val(geobytes);
+    });
+
+    $.getJSON('http://ip-api.com/json/?callback=?', function (data) {
+        ipapi = JSON.stringify(data, null, 2);
+        $("#Public_InternetInformation").val(ipapi);
+    });
+
+    /*####################################*/
+    //      GET OS Information
+    /*####################################*/
+    try {
+        var OSName = "Unknown";
+        if (window.navigator.userAgent.indexOf("Windows NT 10.0") != -1) OSName = "Windows 10";
+        else if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName = "Windows 8";
+        else if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName = "Windows 7";
+        else if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName = "Windows Vista";
+        else if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName = "Windows XP";
+        else if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName = "Windows 2000";
+        else if (window.navigator.userAgent.indexOf("Mac") != -1) OSName = "Mac/iOS";
+        else if (window.navigator.userAgent.indexOf("X11") != -1) OSName = "UNIX";
+        else if (window.navigator.userAgent.indexOf("Linux") != -1) OSName = "Linux";
+        else window.navigator.userAgent;
+        $("#ClientAppAndOSVersion").val(OSName + ' ---> Details : ' + window.navigator.userAgent);
+    }
+    catch (e) {
+        console.log(e);
+    }
+
+    /*####################################*/
+
+    // show/hide code starts
+    jQuery('div#reguler_contaner').hide();
+    jQuery('a#show_masked').addClass('active');
+
+    jQuery("#show_masked").click(function () {
+        FadeOUT_AnimatedErrorMessage("ErrorMessage", '');
+
+        jQuery('div#masked_contaner').show();
+        jQuery('div#reguler_contaner').hide();
+        jQuery('a#show_masked').addClass('active');
+        jQuery('a#show_regular').removeClass('active');
+
+        $('#MaskedRegNo').val('');
+        $('#ComboRegNo').val('');
+
+        TabCheckStatus = 'Masked';
+
+    });
+
+    jQuery("#show_regular").click(function () {
+        FadeOUT_AnimatedErrorMessage("ErrorMessage", '');
+
+        jQuery('div#reguler_contaner').show();
+        jQuery('div#masked_contaner').hide();
+
+        jQuery('a#show_regular').addClass('active');
+        jQuery('a#show_masked').removeClass('active');
+
+        $('#MaskedRegNo').val('');
+        $('#ComboRegNo').val('');
+
+        TabCheckStatus = 'Combo';
+
+        LoadSessionsAndPrograms();
+
+    });
+
+    // show/hide code ends
+
+
+    //called when key is pressed in textbox
+    $("#ComboRegNo").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            FadeOUT_AnimatedErrorMessage("ErrorMessage", "3 Digits Only.");
+            return false;
+        }
+    });
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    ///////////////////////////Masking Code////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    var masking = {
+
+        // User defined Values
+        //maskedInputs : document.getElementsByClassName('masked'), // add with IE 8's death
+        maskedInputs: document.querySelectorAll('.masked'), // kill with IE 8's death
+        maskedNumber: 'XdDmMyY9',
+        maskedLetter: '_',
+
+        init: function () {
+            masking.setUpMasks(masking.maskedInputs);
+            masking.maskedInputs = document.querySelectorAll('.masked'); // Repopulating. Needed b/c static node list was created above.
+            masking.activateMasking(masking.maskedInputs);
+        },
+
+        setUpMasks: function (inputs) {
+            var i, l = inputs.length;
+
+            for (i = 0; i < l; i++) {
+                masking.createShell(inputs[i]);
+            }
+        },
+
+        // replaces each masked input with a shall containing the input and it's mask.
+        createShell: function (input) {
+
+            var CampusShortCode = $("#ErrorMessage").attr("title");
+
+            var text = '',
+                placeholder = input.getAttribute('placeholder');
+
+            input.setAttribute('maxlength', placeholder.length);
+            input.setAttribute('data-placeholder', placeholder);
+            input.removeAttribute('placeholder');
+
+            text = '<span class="shell">' +
+              'CIIT/<span aria-hidden="true" id="' + input.id +
+              'Mask"><i></i>' + placeholder + '</span>/' + CampusShortCode +
+              input.outerHTML +
+              '</span>';
+
+            input.outerHTML = text;
+        },
+
+        setValueOfMask: function (e) {
+            var value = e.target.value,
+                placeholder = e.target.getAttribute('data-placeholder');
+
+            return "<i>" + value + "</i>" + placeholder.substr(value.length);
+        },
+
+        // add event listeners
+        activateMasking: function (inputs) {
+            var i, l;
+
+            for (i = 0, l = inputs.length; i < l; i++) {
+                if (masking.maskedInputs[i].addEventListener) { // remove "if" after death of IE 8
+                    masking.maskedInputs[i].addEventListener('keyup', function (e) {
+                        masking.handleValueChange(e);
+                    }, false);
+                } else if (masking.maskedInputs[i].attachEvent) { // For IE 8
+                    masking.maskedInputs[i].attachEvent("onkeyup", function (e) {
+                        e.target = e.srcElement;
+                        masking.handleValueChange(e);
+                    });
+                }
+            }
+        },
+
+        handleValueChange: function (e) {
+            var id = e.target.getAttribute('id');
+            switch (e.keyCode) { // allows navigating thru input
+                case 20: // caplocks
+                case 17: // control
+                case 18: // option
+                case 16: // shift
+                case 37: // arrow keys
+                case 38:
+                case 39:
+                case 40:
+                case 9: // tab (let blur handle tab)
+                    return;
+            }
+
+            document.getElementById(id).value = masking.handleCurrentValue(e);
+            document.getElementById(id + 'Mask').innerHTML = masking.setValueOfMask(e);
+
+        },
+
+        handleCurrentValue: function (e) {
+            var isCharsetPresent = e.target.getAttribute('data-charset'),
+                placeholder = isCharsetPresent || e.target.getAttribute('data-placeholder'),
+                value = e.target.value, l = placeholder.length, newValue = '',
+                i, j, isInt, isLetter, strippedValue;
+
+            // strip special characters
+            strippedValue = isCharsetPresent ? value.replace(/\W/g, "") : value.replace(/\D/g, "");
+
+            for (i = 0, j = 0; i < l; i++) {
+                var x =
+                isInt = !isNaN(parseInt(strippedValue[j]));
+                isLetter = strippedValue[j] ? strippedValue[j].match(/[A-Z]/i) : false;
+                matchesNumber = masking.maskedNumber.indexOf(placeholder[i]) >= 0;
+                matchesLetter = masking.maskedLetter.indexOf(placeholder[i]) >= 0;
+
+                if ((matchesNumber && isInt) || (isCharsetPresent && matchesLetter && isLetter)) {
+
+                    newValue += strippedValue[j++];
+
+                } else if ((!isCharsetPresent && !isInt && matchesNumber) || (isCharsetPresent && ((matchesLetter && !isLetter) || (matchesNumber && !isInt)))) {
+                    // masking.errorOnKeyEntry(); // write your own error handling function
+                    return newValue;
+
+                } else {
+                    newValue += placeholder[i];
+                }
+                // break if no characters left and the pattern is non-special character
+                if (strippedValue[j] == undefined) {
+                    break;
+                }
+            }
+            if (e.target.getAttribute('data-valid-example')) {
+                return masking.validateProgress(e, newValue);
+            }
+            return newValue;
+        },
+
+        validateProgress: function (e, value) {
+            var validExample = e.target.getAttribute('data-valid-example'),
+                pattern = new RegExp(e.target.getAttribute('pattern')),
+                placeholder = e.target.getAttribute('data-placeholder'),
+                l = value.length, testValue = '';
+
+            //convert to months
+            if (l == 1 && placeholder.toUpperCase().substr(0, 2) == 'MM') {
+                if (value > 1 && value < 10) {
+                    value = '0' + value;
+                }
+                return value;
+            }
+            // test the value, removing the last character, until what you have is a submatch
+            for (i = l; i >= 0; i--) {
+                testValue = value + validExample.substr(value.length);
+                if (pattern.test(testValue)) {
+                    return value;
+                } else {
+                    value = value.substr(0, value.length - 1);
+                }
+            }
+
+            return value;
+        },
+
+        errorOnKeyEntry: function () {
+            // Write your own error handling
+        }
+    }
+
+    masking.init();
+
+});
+
+function validateForm() {
+
+    try {
+
+        //debugger;
+        var regexp1 = new RegExp("[^0-9]");
+        var attr = $('#LoginSubmit').attr('GoogleCaptchCheckAttribute');
+
+        // For some browsers, `attr` is undefined; for others,
+        // `attr` is false.  Check for both.
+        if (typeof attr !== typeof undefined && attr !== false) {
+            FadeOUT_AnimatedErrorMessage("ErrorMessage", "Check 'I am not robot'.");
+            return false;
+        }
+        else if (regexp1.test($("#ComboRegNo").val()) && TabCheckStatus != 'Masked') {
+            FadeOUT_AnimatedErrorMessage("ErrorMessage", "Only numbers are allowed.");
+            return false;
+        }
+        else if ($('#MaskedRegNo').val().length < 10 && TabCheckStatus == 'Masked') {
+            FadeOUT_AnimatedErrorMessage("ErrorMessage", "Enter 10 char Valid Reg No.");
+            return false;
+        }
+        else if ($("#ComboRegNo").val().length != 3 && TabCheckStatus != 'Masked') {
+            FadeOUT_AnimatedErrorMessage("ErrorMessage", "Enter 3 Digits Reg No.");
+            return false;
+        }
+        else if ($("#Password").val().length < 1) {
+            FadeOUT_AnimatedErrorMessage("ErrorMessage", "Enter valid Password.");
+            return false;
+        }
+        else {
+            var regNo = '0';
+            if (TabCheckStatus == 'Combo') {
+                //
+                var sessionsComboAjax = $('#sessionsComboAjax').find(":selected").text();
+                var programsComboAjax = $('#programsComboAjax').find(":selected").text();
+                var Reg_No = $('#ComboRegNo').val();
+
+                regNo = sessionsComboAjax + '-' + programsComboAjax + '-' + Reg_No;
+            }
+            else {
+                regNo = $('#MaskedRegNo').val();
+            }
+
+            //Login In Process POPUP
+            $(".se-pre-con").html("<div id='msg'  style=' color: blue; text-align: center; margin-top: 250px; font-size: 20px;'>Please wait while we are loading your login profile...</div>");
+            $(".se-pre-con").delay(2500).fadeIn("slow");
+
+            $('#RegNo').val(regNo.toUpperCase());
+            if (ConsoleType == 'Parent') {
+                FadeOUT_AnimatedErrorMessage("ErrorMessage", "You are logging in as " + ConsoleType + " at portal.");
+            }
+            //alert(regNo + ' Ready to Login.');
+        }
+    } catch (e) {
+        return false;
+    }
+}
+
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+window.onunload = function () { null };
+
+function FadeOUT_AnimatedErrorMessage(divID, message) {
+    $("#" + divID).html('');
+    $("#" + divID).css('display', 'block');
+    $("#" + divID).css('font-weight', 'bold');
+    $("#" + divID).html(message).delay(5000).fadeOut("slow");
+}
+
+function LoadSessionsAndPrograms() {
+    try {
+        var URL_LoadSessionsAndPrograms = $("#URL_LoadSessionsAndPrograms").html();
+        $.ajax({
+            type: "GET",
+            url: URL_LoadSessionsAndPrograms,
+            contentType: "application/json;",
+            success: function (response) {
+                if (response.length > 0) {
+                    //debugger;
+                    var data_Array = new Array();
+                    var data_Array = response.split("|");
+                    if (data_Array.length == 2) {
+                        ///////////////////////////////////////////////////////////////////////////
+                        /////////////////////// Sessions //////////////////////////////////////////
+                        ///////////////////////////////////////////////////////////////////////////
+                        var sessionCombo = "<select id='sessionsComboAjax'>";
+                        var temp1 = new Array();
+                        temp1 = data_Array[0].split(",");
+                        for (index in temp1) {
+                            sessionCombo += "<option value=" + temp1[index] + ">" + temp1[index] + "</option>";
+                        }
+                        sessionCombo += "</select>";
+                        $("#Sessions").html(sessionCombo);
+                        ///////////////////////////////////////////////////////////////////////////
+                        /////////////////////// Programs //////////////////////////////////////////
+                        ///////////////////////////////////////////////////////////////////////////
+                        var programCombo = "<select id='programsComboAjax'>";
+                        var temp2 = new Array();
+                        temp2 = data_Array[1].split(",");
+                        for (index in temp2) {
+                            programCombo += "<option value=" + temp2[index] + ">" + temp2[index] + "</option>";
+                        }
+                        programCombo += "</select>";
+                        $("#Programs").html(programCombo);
+                        ///////////////////////////////////////////////////////////////////////////
+                        ///////////////////////////////////////////////////////////////////////////
+                        ///////////////////////////////////////////////////////////////////////////
+                        $('#ComboRegNo').show();
+                    }
+                    else {
+                        alert("This option is not working at this time. Please contact Departmental Coordinator.");
+                        location.reload();
+                    }
+                }
+            },
+            error: function () {
+                alert("You can't use ByList Login option at this time.");
+                location.reload();
+            }
+        });
+
+    } catch (e) {
+        console.writeline("Exception in JS (LoadSessionsAndPrograms)");
+        console.writeline(e);
+        location.reload();
+    }
+}
+
+function recaptchaCallback() {
+    $('#LoginSubmit').removeAttr('GoogleCaptchCheckAttribute');
+};

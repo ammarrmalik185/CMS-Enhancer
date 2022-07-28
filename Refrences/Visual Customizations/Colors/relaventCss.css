@@ -1,0 +1,267 @@
+/*Variables*/
+:root{
+    --background:"white";
+    --backgroundMain: "";
+    --noticeboardBackground: "";
+
+    --baseColor:#fff;
+    --altBaseColor: #D1D2D9;
+    --primaryColor: #1e1f4a;
+    --secondaryColor: #13A89E;
+
+    --fontColor: #000000;
+    --altFontColor: #ffffff;
+    --linkFontColor: "blue";
+    --heighlightFontColor: "yellow";
+
+    --positiveBarColor: "green";
+    --altPositiveBarColor: "light green";
+    --negativeBarColor: "red"
+}
+
+
+/*-base-*/
+.top_row .logout,
+.rounded_menu_boxes ul li a span,
+.rounded_menu_boxes ul li a ,
+.rounded_menu_boxes ul li span,
+.rounded_menu_boxes ul li a:hover,
+.rounded_menu_boxes ul li a.selected,
+.main_body .content_area .title_search_area,
+.form_area form input[type=submit],
+.footer_menu ul li a{
+    color: #fff;
+}
+.rounded_menu_boxes ul li a.home,
+.rounded_menu_boxes ul li a.attndnce,
+.rounded_menu_boxes ul li a.support,
+.rounded_menu_boxes ul li a.regCard,
+.rounded_menu_boxes ul li a.fees,
+.rounded_menu_boxes ul li a.courses,
+.rounded_menu_boxes ul li a.marks,
+.rounded_menu_boxes ul li a.course_portal,
+.rounded_menu_boxes ul li a.reports,
+.form_area form input[type=text],
+.form_area form select,
+.form_area form textarea,
+.main_body .content_area {
+    background-color: #fff;
+}
+
+
+/*-altBase-*/
+body {
+    background: #D1D2D9;
+}
+.form_area form input[type=text],
+.form_area form select,
+.form_area form textarea {
+    border: 1px solid #eee;
+}
+
+
+/*primary*/
+.main_body .content_area .title_search_area,
+.form_area form input[type=submit],
+.footer_menu{
+    background-color: #1e1f4a;
+}
+
+
+/*secondary*/
+.top_row {
+    background: #13A89E;
+}
+.rounded_menu_boxes ul li a.selected {
+    background-color: #13A89E !important;
+}
+.rounded_menu_boxes ul li a:hover,
+.rounded_menu_boxes ul li a.home:hover,
+.rounded_menu_boxes ul li a.attndnce:hover,
+.rounded_menu_boxes ul li a.support:hover,
+.rounded_menu_boxes ul li a.regCard:hover,
+.rounded_menu_boxes ul li a.fees:hover,
+.rounded_menu_boxes ul li a.courses:hover,
+.rounded_menu_boxes ul li a.marks:hover,
+.rounded_menu_boxes ul li a.course_portal:hover,
+.rounded_menu_boxes ul li a.reports:hover{
+    background-color: #13A89E;
+}
+.circuled_menu_boxes ul li:hover,
+.circuled_menu_boxes ul li.selected{
+    background-color: #51c1ba !important;
+}
+.main_body .content_area .title_search_area .search_btn,
+.main_body .content_area .title_search_area .page_icon{
+    background: url("../img/search.png") no-repeat scroll center 9px #13a89e;
+}
+
+/*-fontColor-*/
+.rounded_menu_boxes ul li a {
+    color: #000;
+}
+
+
+/*-altFontColor-*/
+.page_title_row h3 ,
+.page_title_row h5,
+.circuled_menu_boxes ul li {
+    color: #fff;
+}
+.page_title_row h5.teachername {
+    color: #e7e8e9;
+}
+
+/*-negativeBar-*/
+.badge {
+    background-color: #f00;
+}
+
+
+/*---------------------uncategorized---------------------*/
+.footer_menu ul li a:hover {
+    background: #13A89E;
+}
+.footer_menu ul li a.selected {
+    background: url("../img/footor_icons.png") no-repeat scroll -35px bottom #13A89E !important;
+}
+
+.footer_menu ul li a.new_assignment {
+    background: url("../img/footor_icons.png") no-repeat scroll 0 top #fff;
+}
+
+.footer_menu ul li a.new_assignment:hover {
+    background: url("../img/footor_icons.png") no-repeat scroll 0 bottom #13A89E;
+}
+
+.footer_menu ul li a.edit_assignment {
+    background: url("../img/footor_icons.png") no-repeat scroll -35px top #fff;
+}
+
+.footer_menu ul li a.edit_assignment:hover {
+    background: url("../img/footor_icons.png") no-repeat scroll -35px bottom #13A89E;
+}
+
+.footer_menu ul li a.add_course {
+    background: url("../img/footor_icons.png") no-repeat scroll -70px top #fff;
+}
+
+.footer_menu ul li a.add_course:hover {
+    background: url("../img/footor_icons.png") no-repeat scroll -70px bottom #13A89E;
+}
+
+.footer_menu ul li a.edit_course {
+    background: url("../img/footor_icons.png") no-repeat scroll -105px top #fff;
+}
+
+.footer_menu ul li a.edit_course:hover {
+    background: url("../img/footor_icons.png") no-repeat scroll -105px bottom #13A89E;
+}
+
+.footer_menu p {
+    color: #fff;
+}
+.allownce_top_form {
+    background: #f3f4f6 none repeat scroll 0 0;
+}
+
+.allownce_form fieldset {
+    color: #777;
+}
+
+.allownce_form label {
+    color: #777;
+}
+
+.allownce_form input[type="text"] {
+    color: #999;
+}
+
+
+.allownce_form input[type="button"] {
+    color: #fff;
+}
+
+.allownce_form input[type="button"]#btnAdd {
+    background: #37998C;
+}
+
+.allownce_form input[type="button"]#btnCancel {
+    background: #377EC0;
+}
+
+.allowance_blue_bg {
+    background: #1e1f4a none repeat scroll 0 0;
+}
+
+.allowance_blue_bg h3 {
+    color: #fff;
+}
+
+.allowance_table table th {
+    background: #1E1F4A none repeat scroll 0 0;
+    border-color: #777 !important;
+    color: #fff;
+}
+.allowance_table table td.gray_bg {
+    background: #C0C2C4 none repeat scroll 0 0 !important;
+    color: #777;
+}
+
+.allowance_table table td.light_gray_bg {
+    background: #D2D6DC none repeat scroll 0 0 !important;
+    color: #777;
+}
+.heading_area {
+    color: #fff;
+}
+
+.forgot {
+    color: #fff;
+}
+.forgot span a {
+    color: #fff;
+}
+.copy_container {
+    color: #fff;
+}
+.login_box {
+    background: #fff;
+}
+
+.login_box form input[type=text] {
+    background: none repeat scroll 0 0 #d1d2d4;
+    border: 1px solid #999;
+    color: #6d6e71;
+}
+
+.login_box form input[type=submit] {
+    background: url("../img/login_button.png") no-repeat scroll 0 0 #fff;
+}
+.dashboard a span p {
+    background: none repeat scroll 0 0 #76c8a7;
+    color: #1e1f4a;
+}
+.dashboard_heading {
+    color: #fff;
+}
+
+.news_box {
+    background: none repeat scroll 0 0 #fff;
+}
+
+.news_box .controls {
+    background: none repeat scroll 0 0 #13a89e;
+    color: #fff;
+}
+.StudentPicture {
+    color: white;
+}
+.StudentPictureSpinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+}
+.Spinner {
+    border: 1px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid #3498db; /* Blue */
+}

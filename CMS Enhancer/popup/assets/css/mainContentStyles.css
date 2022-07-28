@@ -1,0 +1,144 @@
+#mainContentContainer {
+  width: 650px;
+  margin-left: 50px;
+}
+
+.optionDivisionContainer {
+  padding: 10px;
+}
+
+.optionSplitterhr {
+  background-color: white;
+  width: 540px;
+  margin: 0px;
+  opacity: 50%;
+}
+
+.optionSplitterhr.optionSplitterhrMain {
+  margin-top: 10px;
+}
+
+.optionContainer {
+  margin-left: 50px;
+}
+
+.option {
+  height: auto;
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+}
+
+.row.optionRow {
+  height: auto;
+  margin: 0px;
+  max-height: 25px;
+}
+
+.col-md-6.optionTextColumn {
+  width: 480px;
+  padding: 0px;
+  height: 25px;
+}
+
+.optionText {
+  width: auto;
+  display: inline-block;
+  padding: 0px;
+  font-family: ABeeZee, sans-serif;
+}
+
+.optionTextMain {
+  font-size: x-large;
+}
+
+.col-md-6.optionCheckboxColumn {
+  width: 50px;
+  padding: 0px;
+  text-align: right;
+  height: 25px;
+}
+
+.optionCheckbox {
+}
+
+.optionCheckboxMain {
+  height: 15px;
+  width: 15px;
+}
+
+.optionSplitSpace {
+  height: 25px;
+}
+
+.optionsDivisionHeading {
+  padding-top: 10px;
+  text-align: center;
+  font-family: ABeeZee, sans-serif;
+  color: white;
+}
+
+.groupHeading {
+  text-align: center;
+  font-family: ABeeZee, sans-serif;
+  color: white;
+  font-size: 30px;
+}
+
+.row.themeSelectionRow {
+}
+
+.colorViewer {
+  margin: 0px 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 100%;
+}
+
+.themeOptions {
+  padding: 0px 10px;
+  /*padding: 5px;*/
+  display: inline-block;
+}
+
+.themeOptionsIcons {
+  padding: 0px 10px;
+  color: black;
+  height: 20px;
+  width: 20px;
+  font-size: 25px;
+}
+
+.themeOptionContainer {
+  width: 500px;
+}
+
+.optionSplitterhrTheme {
+  width: 500px;
+  margin-left: 50px;
+}
+
+.list-group-item {
+  border: none;
+  background: transparent;
+}
+
+.subGroupHeading {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+#advancedSettingsButton {
+  background-color: transparent;
+  width: 80%;
+  color: white;
+  border: dashed 1px gray;
+}
+
+.advancedSettingsButtonContainer {
+  text-align: center;
+}
+

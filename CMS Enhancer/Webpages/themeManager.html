@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>cmsEnhancerPages</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/componentStyles.css">
+    <link rel="stylesheet" href="assets/css/dialogStyles.css">
+    <link rel="stylesheet" href="assets/css/snackBarStyles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div>
+        <div id="getInputDialog" class="dialogContainer">
+            <div id="getInputDialogContent" class="dialogContentContainer">
+                <h1 class="text-center">Enter Data</h1>
+                <p class="text-center" id="addDataDialogPrompt">You sure you want to do dis?</p><textarea id="addDataDialogInput"></textarea>
+                <div class="text-center"><button class="btn btn-primary standardButton" id="getInputDialog_ButtonDone" type="button">Done</button><button class="btn btn-primary standardButton" id="getInputDialog_ButtonCancel" type="button">Cancel</button></div>
+            </div>
+        </div>
+        <div id="confirmationDialog" class="dialogContainer">
+            <div id="confirmationDialogContent" class="dialogContentContainer">
+                <h1 class="text-center">Confirmation</h1>
+                <p class="text-center" id="confirmationDialogMessage">You sure you want to do dis?</p>
+                <div class="text-center"><button class="btn btn-primary standardButton" id="confirmationDialogButtonYes" type="button">Yes</button><button class="btn btn-primary standardButton" id="confirmationDialogButtonNo" type="button">No</button></div>
+            </div>
+        </div>
+        <div id="exportThemeDialog" class="dialogContainer">
+            <div id="exportThemeDialogContent" class="dialogContentContainer">
+                <h1 class="text-center">Export As JSON</h1>
+                <div class="exportThemeJsonViewer">
+                    <p id="exportThemeJsonViewerParagraph">let <strong><em>defaultThemes </em></strong>= {<br> // Default theme<br> cuiTheme : {<br> displayName: "Normal Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData:{<br> background:"",<br> backgroundMain: "",<br> noticeboardBackground: "",<br><br> baseColor: "",<br> altBaseColor: "",<br> primaryColor: "",<br> secondaryColor: "",<br><br> fontColor: "",<br> altFontColor: "",<br> linkFontColor: "",<br> highlightFontColor: "",<br><br> positiveBarColor: "",<br> altPositiveBarColor: "",<br> negativeBarColor: ""<br> }<br> },<br><br> // Dark Theme theme<br> darkTheme : {<br> displayName: "Dark Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData: {<br> background: "#181818",<br> backgroundMain: "#000000",<br> noticeboardBackground: "#636363",<br><br> baseColor: "#1d1d1d",<br> altBaseColor: "#393939",<br> primaryColor: "#404040",<br> secondaryColor: "#323232",<br><br> fontColor: "#ffffff",<br> altFontColor: "#959595",<br> linkFontColor: "#5db3ff",<br> highlightFontColor: "#b5e200",<br><br> positiveBarColor: "#067204",<br> negativeBarColor: "#6a1717"<br> }<br><br> },<br><br> // Light theme<br> lightTheme : {<br> displayName: "Light Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData: {<br> background: "#ffffff",<br> backgroundMain: "#d2d2d2",<br> noticeboardBackground: "#c9c9c9",<br><br> baseColor: "#7d7d7d",<br> altBaseColor: "#6a6a6a",<br> primaryColor: "#848484",<br> secondaryColor: "#cdcdcd",<br><br> fontColor: "#000000",<br> altFontColor: "#000000",<br> linkFontColor: "#5db3ff",<br> highlightFontColor: "#b5e200",<br><br> positiveBarColor: "#08bf03",<br> negativeBarColor: "#ad2525"<br> }<br> },<br><br> // Gaymer theme<br> gamerTheme : {<br> displayName: "Gamer Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData: {<br> background: "url(https://wallpaperaccess.com/full/2722030.jpg) center center",<br> backgroundMain: "#6411d2",<br> noticeboardBackground: "rgba(171,139,252,0.68)",<br><br> baseColor: "#2d2d2d",<br> altBaseColor: "#6a6a6a",<br> primaryColor: "#48af39",<br> secondaryColor: "#256826",<br><br> fontColor: "#ffffff",<br> altFontColor: "#ffffff",<br> linkFontColor: "#de5b10",<br> highlightFontColor: "#0130d4",<br><br> positiveBarColor: "#6103bf",<br> negativeBarColor: "#741313"<br> }<br> },<br><br> // Pink theme<br> pinkTheme : {<br> displayName: "Pink Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData: {<br> background: "url(https://c4.wallpaperflare.com/wallpaper/246/739/689/digital-digital-art-artwork-illustration-abstract-hd-wallpaper-thumb.jpg)",<br> backgroundMain: "#686868",<br> noticeboardBackground: "#9a0098",<br><br> baseColor: "#620074",<br> altBaseColor: "#a500d2",<br> primaryColor: "#431e4a",<br> secondaryColor: "#370440",<br><br> fontColor: "#ffffff",<br> altFontColor: "#fcfcfc",<br> linkFontColor: "#5d7fff",<br> highlightFontColor: "#0aef01",<br><br> positiveBarColor: "#08bf03",<br> negativeBarColor: "#5a1414"<br> }<br> },<br><br> // Among Us theme<br> amongUsTheme : {<br> displayName: "Sus Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData: {<br> background: "url(https://i.pinimg.com/736x/41/2e/e8/412ee8d9e8180880b2630bfa35b2d17d.jpg)",<br> backgroundMain: "#686868",<br> noticeboardBackground: "#f50202",<br><br> baseColor: "#393939",<br> altBaseColor: "#444444",<br> primaryColor: "#ad0223",<br> secondaryColor: "#6c011a",<br><br> fontColor: "#ffffff",<br> altFontColor: "#ffffff",<br> linkFontColor: "#5d7fff",<br> highlightFontColor: "#e3d802",<br><br> positiveBarColor: "#08bf03",<br> negativeBarColor: "#5a1414"<br> }<br> },<br><br> // Communism theme<br> communismTheme:{<br> displayName:"Communism Theme",<br> themeSettingsData:{<br> backgroundImageSize: "cover",<br> },<br> themeData:{<br> background: "url(https://camo.githubusercontent.com/531e03395b6bfba26df598203c016a94e1f341eb37974f64af463c64c821a9bd/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f382f38642f466c61675f6f665f7468655f436f6d6d756e6973745f50617274795f6f665f566965746e616d2e7376672f33323070782d466c61675f6f665f7468655f436f6d6d756e6973745f50617274795f6f665f566965746e616d2e7376672e706e67)",<br> backgroundMain: "#686868",<br> noticeboardBackground: "#f50202",<br><br> baseColor: "#393939",<br> altBaseColor: "#444444",<br> primaryColor: "#ad0223",<br> secondaryColor: "#6c011a",<br><br> fontColor: "#c1af4d",<br> altFontColor: "#C1AF4DFF",<br> linkFontColor: "#C1AF4DFF",<br> highlightFontColor: "#e3d802",<br><br> positiveBarColor: "#db0220",<br> negativeBarColor: "#cdc132"<br> }<br> },<br>}<br><br>let <strong><em>defaultUserThemeData </em></strong>= {<br> selectedThemeType:"default",<br> selectedThemeId:"cuiTheme",<br> customThemeData:{<br> Themes:{}<br> }<br>};<br></p>
+                </div>
+                <div>
+                    <p>You can copy the JSON above and save it. You can use this to share your themes to anyone as well as keep backups.</p>
+                    <div class="text-center"><button class="btn btn-primary standardButton" id="exportThemeDialogClose" type="button">Done</button></div>
+                </div>
+            </div>
+        </div>
+        <div id="customizeThemeDialog" class="dialogContainer">
+            <div id="customizeThemeDialogContent" class="dialogContentContainer">
+                <h1 class="dialogHeading">Edit Custom Theme</h1>
+                <div class="themeNameContainer"><span>Enter Name :&nbsp;</span><input type="text" id="customTheme_Name_Input" class="textThemeNameInput"></div>
+                <h1 class="sectionHeader">Backgrounds</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="backgroundSelectionHeader">Background</p>
+                            <div class="backgroundImageViewContainer radioOptionBlock">
+                                <div><input type="radio" id="customTheme_Background_Type_Image" name="backgroundSelection"><span>Image</span></div><input type="text" id="customTheme_Background_URL" class="backgroundImagePickerUrl" placeholder="Image URL" style="text-align: center;">
+                                <div>
+                                    <select id = "customTheme_Background_FillType" class="themeAlignmentSelect">
+                                        <option value="tile" selected>Tile</option>
+                                        <option value="stretch">Stretch</option>
+                                        <option value="center">Center</option>
+                                        <option value="fit">Fit</option>
+                                        <option value="fill">Fill</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="backgroundSolidColorViewContainer radioOptionBlock">
+                                <div class="text-center"><input type="radio" id="customTheme_Background_Type_Color" name="backgroundSelection" checked=""><span>Solid Color</span></div>
+                                <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Background_ColorInput" class="colorChooserInput"><span class="colorChooserLabelTextBackground">Background Color</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="backgroundSelectionHeader">Body Background</p>
+                            <div class="backgroundImageViewContainer radioOptionBlock">
+                                <div><input type="radio" id="customTheme_MainBackground_Type_Image" name="backgroundMainSelection"><span>Image</span></div><input type="text" id="customTheme_MainBackground_URL" class="backgroundImagePickerUrl" placeholder="Image URL" style="text-align: center;">
+                                <div>
+                                    <select id = "customTheme_MainBackground_FillType" class="themeAlignmentSelect">
+                                        <option value="tile" selected>Tile</option>
+                                        <option value="stretch">Stretch</option>
+                                        <option value="center">Center</option>
+                                        <option value="fit">Fit</option>
+                                        <option value="fill">Fill</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="backgroundSolidColorViewContainer radioOptionBlock">
+                                <div class="text-center"><input type="radio" id="customTheme_MainBackground_Type_Color" name="backgroundMainSelection" checked=""><span>Solid Color</span></div>
+                                <div class="colorChooserOptionContainer"><input type="color" id="customTheme_MainBackground_ColorInput" class="colorChooserInput"><span class="colorChooserLabelTextBackground">Background Color</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="backgroundSelectionHeader">Noticeboard Background</p>
+                            <div class="backgroundImageViewContainer radioOptionBlock">
+                                <div><input type="radio" id="customTheme_NoticeboardBackground_Type_Image" name="noticeboardBackgroundSelection"><span>Image</span></div><input type="text" id="customTheme_NoticeboardBackground_URL" class="backgroundImagePickerUrl" placeholder="Image URL" style="text-align: center;">
+                                <div>
+                                    <select id = "customTheme_NoticeboardBackground_FillType" class="themeAlignmentSelect">
+                                        <option value="tile" selected>Tile</option>
+                                        <option value="stretch">Stretch</option>
+                                        <option value="center">Center</option>
+                                        <option value="fit">Fit</option>
+                                        <option value="fill">Fill</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="backgroundSolidColorViewContainer radioOptionBlock">
+                                <div class="text-center"><input type="radio" id="customTheme_NoticeboardBackground_Type_Color" name="noticeboardBackgroundSelection" checked=""><span>Solid Color</span></div>
+                                <div class="colorChooserOptionContainer"><input type="color" id="customTheme_NoticeboardBackground_ColorInput" class="colorChooserInput"><span class="colorChooserLabelTextBackground">Background Color</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="sectionHeader">Colors</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 colorChooserColumn">
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_base" class="colorChooserInput"><span class="colorChooserLabelText">Base Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_altBase" class="colorChooserInput"><span class="colorChooserLabelText">Alternate Base Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_primary" class="colorChooserInput"><span class="colorChooserLabelText">Primary Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_secondary" class="colorChooserInput"><span class="colorChooserLabelText">Secondary Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_font" class="colorChooserInput"><span class="colorChooserLabelText">Font Color</span></div>
+                        </div>
+                        <div class="col-md-6 colorChooserColumn">
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_altFont" class="colorChooserInput"><span class="colorChooserLabelText">Alternate Font Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_linkFont" class="colorChooserInput"><span class="colorChooserLabelText">Link Font Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_highlightFont" class="colorChooserInput"><span class="colorChooserLabelText">Highlight Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_positive" class="colorChooserInput"><span class="colorChooserLabelText">Positive Color</span></div>
+                            <div class="colorChooserOptionContainer"><input type="color" id="customTheme_Color_negative" class="colorChooserInput"><span class="colorChooserLabelText">Negative Color</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="themeOptionsButtonContainer"><button class="btn btn-primary standardButton" id="customTheme_Button_Submit" type="button">Save</button><button class="btn btn-primary standardButton" id="customTheme_Button_ImportJson" type="button">Import JSON</button><button class="btn btn-primary standardButton" id="customTheme_Button_ExportJson" type="button">Export JSON</button><button class="btn btn-primary standardButton" id="customTheme_Button_Cancel" type="button">Cancel</button></div>
+            </div>
+        </div>
+        <div id="snackbar"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row flex-column flex-sm-row wrapper min-vh-100">
+            <div class="col-12 col-sm-1 col-md-3 flex-shrink-1 p-0 bg-dark">
+                <nav class="navbar navbar-dark navbar-expand-sm bg-dark text-nowrap flex-row align-items-start flex-sm-column">
+                    <div class="container flex-sm-column"><a class="navbar-brand" href="#"><i class="fa fa-cogs fa-2x text-warning"></i></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1">
+                            <ul class="navbar-nav flex-column justify-content-between w-100">
+                                <li class="nav-item" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" title="Overview"><a class="nav-link" href="#"><i class="fa fa-paint-brush me-2 text-info"></i><span class="d-inline-block d-sm-none d-md-inline-block">Theme Manager</span></a></li>
+                                <li class="nav-item" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" title="Properties"></li>
+                                <li class="nav-item" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="right" title="Contacts"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-12 col-sm-11 col-md-9 mainContentArea">
+                <h1 class="text-center">Theme Manager</h1>
+                <div>
+                    <h1 class="text-center subHeading">Default Themes</h1>
+                    <div>
+                        <ul class="list-group" id="defaultThemesContainer"></ul>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-center subHeading">Custom Themes</h1>
+                    <div>
+                        <ul class="list-group" id="customThemesContainer"></ul>
+                    </div>
+                    <div class="addNewButtonContainer"><button class="btn btn-primary" id="addNewThemeButton" type="button">+ Add New Custom Theme</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Global/globalVariables.js"></script>
+    <script src="../Global/commonFunctions.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>

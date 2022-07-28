@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>extensionPopupDesign</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/headerStyles.css">
+    <link rel="stylesheet" href="assets/css/mainContentStyles.css">
+    <link rel="stylesheet" href="assets/css/mainStyles.css">
+    <link rel="stylesheet" href="assets/css/navigationBarStyles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.css">
+</head>
+
+<body>
+    <div id="myHeader" class="header sticky">
+        <div class="headerContentContainer"><img class="headerLogo" src="assets/img/cms_logo.png">
+            <div class="headerTextContainer">
+                <h1 style="padding: 10px;">CMS Enhancer</h1>
+            </div>
+        </div>
+    </div>
+    <div id="leftSideBarContainer" z="">
+        <div id="leftSideBar" class="main-leftsidebar-div" style="margin-top:120px">
+            <div id="leftNavBarContentsContainer" class="leftsidebarmenu">
+                <ul class="nav sidebar-first-menu scrollbar-indigo thin navigationBarItems" id="leftNavBarContents">
+                    <li class="nav-item d-flex navItem" id="displayAll"><img class="rounded-circle navItemImage" src="assets/img/allIcon.png"><a class="nav-link active navItemText" href="#">All</a></li>
+                    <li class="nav-item d-flex navItem" id="displayCustomization"><img class="rounded-circle navItemImage" src="assets/img/paintIcon.jpg"><a class="nav-link active navItemText" href="#">Visual Customization</a></li>
+                    <li class="nav-item d-flex navItem" id="displayMarks"><img class="rounded-circle navItemImage" src="assets/img/markSummaryIcon.jpg"><a class="nav-link active navItemText" href="#">Marks Summary</a></li>
+                    <li class="nav-item d-flex navItem" id="displayResult"><img class="rounded-circle navItemImage" src="assets/img/resultCardIcon.jpg"><a class="nav-link active navItemText" href="#">Result Card</a></li>
+                    <li class="nav-item d-flex navItem" id="displayBlock"><img class="rounded-circle navItemImage" src="assets/img/blockingIcon.png"><a class="nav-link active navItemText" href="#">Blocking</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainContentContainer" style="margin-top:120px">
+            <div id="settingsCustomization" class="optionDivisionContainer">
+                <h1 class="optionsDivisionHeading">Visual Customization</h1>
+                <div class="optionContainer">
+                    <div class="container option">
+                        <div class="row optionRow">
+                            <div class="col-md-6 optionTextColumn">
+                                <p class="text-left text-white optionText optionTextMain">Enabled</p>
+                            </div>
+                            <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="visualCustomization_enable" class="optionCheckboxMain"></div>
+                        </div>
+                    </div>
+                    <hr class="optionSplitterhr optionSplitterhrMain">
+                </div>
+                <div class="optionDivisionContents">
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">Theme</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Enable Custom Themes</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="visualCustomization_enableTheme" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                        <div class="optionSplitSpace"></div>
+                    </div>
+                    <h1 class="subGroupHeading">Default Themes</h1>
+                    <ul class="list-group" id="defaultThemesContainer"></ul>
+                    <h1 class="subGroupHeading">Custom Themes</h1>
+                    <ul class="list-group" id="customThemesContainer"></ul>
+                    <div class="advancedSettingsButtonContainer"><button class="btn btn-primary" id="advancedSettingsButton" type="button">Customize Themes</button></div>
+                </div>
+            </div>
+            <div id="settingsMarks" class="optionDivisionContainer">
+                <h1 class="optionsDivisionHeading">Marks Summary</h1>
+                <div class="optionContainer">
+                    <div class="container option">
+                        <div class="row optionRow">
+                            <div class="col-md-6 optionTextColumn">
+                                <p class="text-left text-white optionText optionTextMain">Enabled</p>
+                            </div>
+                            <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_enable" class="optionCheckboxMain"></div>
+                        </div>
+                    </div>
+                    <hr class="optionSplitterhr optionSplitterhrMain">
+                </div>
+                <div class="optionDivisionContents">
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">Download Marks</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Show Download Marks As Text File Button</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_download_marks_button_text" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                </div>
+                <div class="optionDivisionContents">
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">Total Marks Display</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Total Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_total" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Theory Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_theory" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Lab Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_lab" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Total Marks (Average from 100)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_total_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Theory Marks (Average from 100)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_theory_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Lab Marks (Average from 100)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_lab_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Theory Marks (Average in theory only)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_theory_weighted_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Lab Marks (Average in lab only)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_lab_weighted_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_total" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Theory Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_theory" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Lab Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_lab" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Marks (Average from 50)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_total_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Theory Marks (Average from 50)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_theory_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Lab Marks (Average from 50)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_lab_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Theory Marks (Average in theory)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_theory_weighted_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Internal Lab Marks (Average in lab)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_marks_internal_lab_weighted_average" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">More Data In Tables</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Accounted Marks</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_tableData_accounted" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Average (in theory or lab)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_tableData_intermediate" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Average (from absolute marks)</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_tableData_absolute" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">Better Mark Tables</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Remove Duplicate Entries</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="markSummary_removeDuplicateEntries" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                </div>
+            </div>
+            <div id="settingsResult" class="optionDivisionContainer">
+                <h1 class="optionsDivisionHeading">Result Card</h1>
+                <div class="optionContainer">
+                    <div class="container option">
+                        <div class="row optionRow">
+                            <div class="col-md-6 optionTextColumn">
+                                <p class="text-left text-white optionText optionTextMain">Enabled</p>
+                            </div>
+                            <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="resultCard_enable" class="optionCheckboxMain"></div>
+                        </div>
+                    </div>
+                    <hr class="optionSplitterhr optionSplitterhrMain">
+                </div>
+                <div class="optionDivisionContents">
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">GPA Calculation</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Show GPA per semister</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="resultCard_showGPA" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                </div>
+            </div>
+            <div id="settingsBlock" class="optionDivisionContainer">
+                <h1 class="optionsDivisionHeading">Blocking</h1>
+                <div class="optionContainer">
+                    <div class="container option">
+                        <div class="row optionRow">
+                            <div class="col-md-6 optionTextColumn">
+                                <p class="text-left text-white optionText optionTextMain">Enabled</p>
+                            </div>
+                            <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="blocking_enable" class="optionCheckboxMain"></div>
+                        </div>
+                    </div>
+                    <hr class="optionSplitterhr optionSplitterhrMain">
+                </div>
+                <div class="optionDivisionContents">
+                    <div class="optionSplitSpace"></div>
+                    <h1 class="groupHeading">Block Popups</h1>
+                    <div class="optionContainer">
+                        <div class="container option">
+                            <div class="row optionRow">
+                                <div class="col-md-6 optionTextColumn">
+                                    <p class="text-left text-white optionText">Block Notification Popups On Main Page</p>
+                                </div>
+                                <div class="col-md-6 optionCheckboxColumn"><input type="checkbox" id="blocking_blockPopups" class="optionCheckbox"></div>
+                            </div>
+                        </div>
+                        <hr class="optionSplitterhr">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Global/globalVariables.js"></script>
+    <script src="../Global/commonFunctions.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/tabManager.js"></script>
+    <script src="assets/js/themeManagerPopup.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.js"></script>
+</body>
+
+</html>

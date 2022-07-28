@@ -1,0 +1,21 @@
+Todo: New Features
+----> Todo: save as csv for result and mark summary
+----> Todo: add some kind of support me or adds
+----> Todo: add hot fixes
+----> ----> Todo: fix fee chalan icon
+----> ----> Todo: add auto login page redirection for timeout
+----> ----> Todo: remove redundant elements
+----> ----> Todo: reg no removed when recaptcha
+----> Todo: Tables for mark summary
+----> Todo: Open teacher info on click teacher name
+----> Todo: redirection for new form
+
+
+Todo: Fixes
+----> Todo: Show prompt for invalid json
+----> Todo: Fix scroll bar on popup
+----> Todo: Better tooltips for colors
+----> Todo: Fix title of CMS Websites
+
+Todo: Incomplete Functionality
+----> Todo: Add Mid term and lab mid term to remove duplicate entries

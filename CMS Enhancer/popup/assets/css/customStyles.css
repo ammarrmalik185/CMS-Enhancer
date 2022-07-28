@@ -1,0 +1,59 @@
+#mainContentContainer {
+  height: 100%;
+  width: 650px;
+  margin-left: 50px;
+  background: #404040;
+}
+
+.optionDivisionContainer {
+}
+
+.optionSplitterhr {
+  background-color: white;
+  width: 540px;
+  margin: 0px;
+}
+
+.optionContainer {
+  margin-left: 50px;
+}
+
+.option {
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+.row.optionRow {
+  height: auto;
+  margin: 0px;
+  max-height: 25px;
+}
+
+.col-md-6.optionTextColumn {
+  width: 480px;
+  padding: 0px;
+  height: 25px;
+}
+
+.optionText {
+  width: auto;
+  display: inline-block;
+  padding: 0px;
+  font-family: ABeeZee, sans-serif;
+}
+
+.col-md-6.optionCheckboxColumn {
+  width: 50px;
+  padding: 0px;
+  text-align: right;
+  height: 25px;
+}
+
+.optionCheckbox {
+}
+
+.optionSplitSpace {
+  height: 25px;
+}
+
